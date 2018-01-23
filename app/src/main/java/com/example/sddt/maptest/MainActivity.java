@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        //SDKInitializer.initialize(getApplicationContext());
+        SDKInitializer.initialize(getApplicationContext());
         mLocationClient = new LocationClient(getApplicationContext());
         //声明LocationClient类
         mLocationClient.registerLocationListener(myListener);
@@ -45,8 +45,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         position = findViewById(R.id.position);
-        mapView = findViewById(R.id.map_view);
-        baiduMap = mapView.getMap();
+//        mapView = findViewById(R.id.map_view);
+//        baiduMap = mapView.getMap();
 
         LocationManager locManager = (LocationManager)getSystemService(Context.LOCATION_SERVICE);
         if(!locManager.isProviderEnabled(LocationManager.GPS_PROVIDER)){
